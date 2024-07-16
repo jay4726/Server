@@ -13,11 +13,12 @@ app.use(cors());
 app.use(express.json()); 
 
 app.get('/', (req, res) => {
-  app.use('/', productRoutes);
+  res.send('HELLO');
 });
 
+app.use('/api/carousel', productRoutes);
 
-
+// Start server
 const start = async () => {
   try {
     await connectDB(); 
