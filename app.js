@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   res.send('HELLO');
 });
 
-app.use('/api/product', productRoutes);
+app.use('/', productRoutes);
 
 const start = async () => {
   try {
