@@ -13,10 +13,10 @@ app.use(cors());
 app.use(express.json()); 
 
 app.get('/', (req, res) => {
-  res.send('HELLO');
+  app.use('/', productRoutes);
 });
 
-app.use('/', productRoutes);
+
 
 const start = async () => {
   try {
