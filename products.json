@@ -1,0 +1,20 @@
+[
+    {
+        "image": "GrayMan",
+        "title": "1899",
+        "description": "Immigrants on a steamship travelling from London to New York get caught up in a mysterious riddle after finding a second vessel adrift on the open sea.",
+        "index": 0
+    },
+    {
+        "image": "DarkMatter",
+        "title": "Dark Matter",
+        "description": "An expert in astrophysics sheds light on the topic of dark matter which has been one of the primary mysteries in modern physics.",
+        "index": 1
+    },
+    {
+        "image": "slideCarousleVideo2",
+        "title": "Stranger Things",
+        "description": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+        "index": 2
+    }
+] 
