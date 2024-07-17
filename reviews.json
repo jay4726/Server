@@ -1,0 +1,16 @@
+[
+    {
+        "id":0,
+        "name": "IMDB",
+        "desc" : "One Time Watch",
+        "country": "India",
+        "rate" : 4
+    },
+    {
+        "id" : 1,
+        "name": "Binge Watch",
+        "desc" : "Must Watch",
+        "country": "India",
+        "rate" : 4.5
+    }
+] 

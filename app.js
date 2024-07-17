@@ -7,6 +7,7 @@ const connectDB = require('./db/connect');
 const PORT = process.env.PORT || 5000;
 
 const productRoutes = require('./routes/product');
+const reviews = require('./routes/reviews');
 
 
 app.use(cors());
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/carousel', productRoutes);
+app.use('/api/reviews', reviews);
 
 // Start server
 const start = async () => {
