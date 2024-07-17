@@ -1,20 +1,16 @@
-const reviews = require('../models/reviews')
+const Review = require('../models/Review'); 
 
-const getAllReviews = async(req,res) =>{
-    
-    const {title,index} = req.query;
-    const queryObject = {};
+const getAllReviews = async (req, res) => {
+  try {
+    const reviews = await Review.find();
 
-    if(title){
-        queryObject.title = title;
-        console.log(queryObject.title)
-    }
-    if(index){
-        queryObject.index = index;
-        console.log(queryObject.index)
-    }
-    const myReviews = await reviews.find(queryObject);
-    res.status(200).json({myReviews})
-}
+    res.status(200).json({ reviews });
+  } catch (error) {
+    console.error('Error fetching reviews:', error);
+    res.status(500).json({ error: 'Failed to fetch reviews' });
+  }
+};
 
-module.exports = {getAllReviews}
+module.exports = {
+  getAllReviews,
+};
