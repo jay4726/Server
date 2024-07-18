@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {getAllReviews} = require('../controllers/reviews');
 
-router.route('/').get(getAllReviews);
+router.route('/').post(getAllReviews);
 
 module.exports = router;
 
