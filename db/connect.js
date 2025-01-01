@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const uri = "mongodb+srv://jay47:Qwerthjkl%4012@bingewatchapi.cfoxxgi.mongodb.net/BingeWatchAPI?retryWrites=true&w=majority&appName=BingeWatchAPI";
+const uri = "mongodb+srv://jay0326:Asdfgbnm%4012@bingewatchapi.cfoxxgi.mongodb.net/BingeWatchAPI?retryWrites=true&w=majority&appName=BingeWatchAPI";
 
 const connectDB = async () => {
     try {
