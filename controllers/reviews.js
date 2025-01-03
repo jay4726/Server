@@ -52,6 +52,7 @@ const addReview = async (req, res) => {
     }
 };
 
+
 // Function to delete a review by ID
 const deleteReview = async (req, res) => {
     try {
@@ -70,16 +71,18 @@ const deleteReview = async (req, res) => {
         res.status(500).json({ message: 'Error deleting review', error: error.message });
     }
 };
+
+
 // Function to update a review by ID
 const updateReview = async (req, res) => {
     const { id } = req.params;  // Get the ID from the URL params
-    const { name, reviews, country, rate } = req.body;  // Get the updated data from the request body
+    const { name, review, country, rate } = req.body;  // Get the updated data from the request body
 
     try {
         // Find the review by ID and update its fields
         const updatedReview = await Review.findByIdAndUpdate(
             id,
-            { name, reviews, country, rate },
+            { name, review, country, rate },
             { new: true }  // Return the updated document
         );
 
