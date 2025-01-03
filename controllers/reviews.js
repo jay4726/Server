@@ -42,5 +42,23 @@ const addReview = async (req, res) => {
     }
 };
 
+app.delete('/api/reviews/:id', async (req, res) => {
+    try {
+      const reviewId = req.params.id;
+  
+      // Delete the review from the database
+      const deletedReview = await Review.findByIdAndDelete(reviewId);
+  
+      if (!deletedReview) {
+        return res.status(404).json({ message: 'Review not found' });
+      }
+  
+      res.status(200).json({ message: 'Review deleted successfully', data: deletedReview });
+    } catch (error) {
+      console.error('Error deleting review:', error);
+      res.status(500).json({ message: 'Error deleting review' });
+    }
+  });
 
 module.exports = {getAllReviews, addReview}
+
