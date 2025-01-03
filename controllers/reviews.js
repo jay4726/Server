@@ -70,10 +70,35 @@ const deleteReview = async (req, res) => {
         res.status(500).json({ message: 'Error deleting review', error: error.message });
     }
 };
+// Function to update a review by ID
+const updateReview = async (req, res) => {
+    const { id } = req.params;  // Get the ID from the URL params
+    const { name, reviews, country, rate } = req.body;  // Get the updated data from the request body
 
-// Export the functions to be used in routes
+    try {
+        // Find the review by ID and update its fields
+        const updatedReview = await Review.findByIdAndUpdate(
+            id,
+            { name, reviews, country, rate },
+            { new: true }  // Return the updated document
+        );
+
+        if (!updatedReview) {
+            return res.status(404).json({ message: 'Review not found' });
+        }
+
+        res.status(200).json(updatedReview);  // Return the updated review
+    } catch (error) {
+        console.error('Error updating review:', error);
+        res.status(500).json({ message: 'Error updating review', error: error.message });
+    }
+};
+
 module.exports = {
     getAllReviews,
     addReview,
     deleteReview,
+    updateReview,  // Export the updateReview function
 };
+
+
